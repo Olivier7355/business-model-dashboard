@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <style>
+
 #mydiv {
   position: absolute;
   z-index: 9;
@@ -11,7 +12,7 @@
 
 #mydivheader {
   text-align: right;
-  padding: 5px;
+  padding: 2px;
   cursor: move;
   z-index: 10;
   background-color: #f2e20d;
@@ -31,7 +32,17 @@ textarea {
 }
 </style>
 <body>
+<!-- 
 
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+-->
+
+<button type="button" onclick="createSticky()">+ Stiky note</button> 
+ 
 <div id="mydiv">
   <div id="mydivheader">&#9746;</div>
   <form>
@@ -40,6 +51,8 @@ textarea {
 </div>
 
 <script>
+
+
 //Make the DIV element draggagle:
 dragElement(document.getElementById("mydiv"));
 
@@ -83,6 +96,17 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
+
+//Create a sticky note
+  function createSticky() {
+	const div = document.createElement("div");
+    div.setAttribute("id", "mydiv");
+    div.innerHTML += '<div id="mydivheader">&#9746;</div>'
+    div.innerHTML += "<form><textarea>"
+    div.innerHTML += "</textarea</form>"
+    document.body.appendChild(div);
+  }
+
 </script>
 
 </body>
