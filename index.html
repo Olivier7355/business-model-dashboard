@@ -1,163 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
+</head>
 <style> 
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-  color : white;
-  text-align: center;
-  font-family: "Lucida Console", "Courier New", monospace;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.PARTNERS {
-  grid-column: 1;
-  grid-row: 1 / 7;
-  background-color: #ffbf00;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.PARTNERS:hover {
-  grid-column: 1;
-  grid-row: 1 / 7;
-  background-color: #ffdf00;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.ACTIVITIES {
-  grid-column: 2;
-  grid-row: 1 / 4;
-  background-color: #008a81;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.ACTIVITIES:hover {
-  grid-column: 2;
-  grid-row: 1 / 4;
-  background-color: #00aa81;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.RESOURCES {
-  grid-column: 2;
-  grid-row: 4 / 7;
-  background-color: #ff8000;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.RESOURCES:hover {
-  grid-column: 2;
-  grid-row: 4 / 7;
-  background-color: #ffa000;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.PROPOSITION {
-  grid-column: 3;
-  grid-row: 1 / 7;
-  background-color: #00bd76;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.PROPOSITION:hover {
-  grid-column: 3;
-  grid-row: 1 / 7;
-  background-color: #00dd76;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.RELATIONSHIPS {
-  grid-column: 4;
-  grid-row: 1 / 4;
-  background-color: #ff9999;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.RELATIONSHIPS:hover {
-  grid-column: 4;
-  grid-row: 1 / 4;
-  background-color: #ffb999;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.CHANNELS {
-  grid-column: 4;
-  grid-row: 4 / 7;
-  background-color: #e60000;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.CHANNELS:hover {
-  grid-column: 4;
-  grid-row: 4 / 7;
-  background-color: red;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.SEGMENTS {
-  grid-column: 5;
-  grid-row: 1 / 7;
-  background-color: #7b6dba;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.SEGMENTS:hover {
-  grid-column: 5;
-  grid-row: 1 / 7;
-  background-color: #7b8dba;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.STRUCTURE {
-  grid-column: 1/4;
-  grid-row: 7 / 9;
-  background-color: #008060;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.STRUCTURE:hover {
-  grid-column: 1/4;
-  grid-row: 7 / 9;
-  background-color: #00a060;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.REVENUE {
-  grid-column: 4 / 7;
-  grid-row: 7 / 9;
-  background-color: #06f9bc;
-  border-radius: 5px;
-  padding-top: 10px;
-}
-.REVENUE:hover {
-  grid-column: 4 / 7;
-  grid-row: 7 / 9;
-  background-color: #06a060;
-  border-radius: 5px;
-  padding-top: 10px;
-}
 
 </style>
-</head>
 <body>
+  <div class="add-note">
+    <i class="fa fa-plus-square-o fa-fw"></i>
+  </div>
+  <div class="add-sticker">
+    <textarea name="text" id="text" cols="10" rows="5" placeholder="Text"></textarea>
+    <button>Add</button>
+  </div>
+  
+  <div class="wrapper">
+  </div>
+  
+  <script id="entry-template" type="text/x-handlebars-template">
+      <div class="mainbar">
+        <!-- <span>{{title}}</span> -->
+        <div class="close"><i class="fa fa-times-circle fa-fw"></i></div>
+        <div class="minimize"><i class="fa fa-minus-square-o fa-fw"></i></div>
+      </div>
+      <pre class="text">{{text}}</pre>
+  </script>
 
-<div class="wrapper">
-  <div class="PARTNERS">KEY PARTNERS</div>
-  <div class="ACTIVITIES">KEY ACTIVITIES</div>
-  <div class="RESOURCES">KEY RESOURCES</div>
-  <div class="PROPOSITION">VALUE PROPOSITION</div>
-  <div class="RELATIONSHIPS">CUSTOMER RELATIONSHIPS</div>
-  <div class="CHANNELS">CHANNELS</div>
-  <div class="SEGMENTS">CUSTOMER SEGMENTS</div>
-  <div class="STRUCTURE">COST STRUCTURE</div>
-  <div class="REVENUE">REVENUE STREAMS</div>
-</div>
+  <div class="dashboard">
+    <div class="PARTNERS">KEY PARTNERS</div>
+    <div class="ACTIVITIES">KEY ACTIVITIES</div>
+    <div class="RESOURCES">KEY RESOURCES</div>
+    <div class="PROPOSITION">VALUE PROPOSITION</div>
+    <div class="RELATIONSHIPS">CUSTOMER RELATIONSHIPS</div>
+    <div class="CHANNELS">CHANNELS</div>
+    <div class="SEGMENTS">CUSTOMER SEGMENTS</div>
+    <div class="STRUCTURE">COST STRUCTURE</div>
+    <div class="REVENUE">REVENUE STREAMS</div>
+  </div>
 
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
 
