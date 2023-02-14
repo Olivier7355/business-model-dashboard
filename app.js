@@ -13,6 +13,9 @@ var zIndex = 1;
     var closeButtons = document.querySelectorAll('.close');
     var minimizeButtons = document.querySelectorAll('.minimize');
 
+
+
+
     createButton.addEventListener('click', create, false);
     for (var i = 0; i < minimizeButtons.length; i++) {
       minimizeButtons[i].addEventListener('click', minimize, false);
@@ -31,10 +34,13 @@ var zIndex = 1;
     event.dataTransfer.setData("text/plain",
       (parseInt(style.getPropertyValue("left"), 10) - event.clientX) + ',' + (parseInt(style.getPropertyValue("top"), 10) - event.clientY));
     event.dataTransfer.setData("target", event.target.id);
+    
   }
 
   function drag_over(event) {
     event.preventDefault();
+    //console.log(event.clientX, event.clientY);
+   
     return false;
   }
 
@@ -44,6 +50,7 @@ var zIndex = 1;
     j.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
     j.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
     event.preventDefault();
+    
     return false;
   }
 
@@ -55,7 +62,7 @@ var zIndex = 1;
     setTimeout(function() {
       wrapper.removeChild(note);
       note = null;
-    }, 1000);
+    }, 100);
   }
 
   function minimize(event) {
