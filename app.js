@@ -10,12 +10,13 @@ var zIndex = 1;
 
   function main() {
     var createButton = document.querySelector('.add-note');
+    var createReport = document.querySelector('.report');
     var closeButtons = document.querySelectorAll('.close');
     var minimizeButtons = document.querySelectorAll('.minimize');
 
 
 
-
+    createReport.addEventListener('click', create_report, false);
     createButton.addEventListener('click', create, false);
     for (var i = 0; i < minimizeButtons.length; i++) {
       minimizeButtons[i].addEventListener('click', minimize, false);
@@ -28,6 +29,16 @@ var zIndex = 1;
     document.body.addEventListener('dragover', drag_over, false);
     document.body.addEventListener('drop', drop, false);
   }
+
+  function create_report(event) {
+    const modal = document.querySelector('.modal');
+    const overlay = document.querySelector('.overlay');
+    modal.classList.remove('hidden-report');
+    overlay.classList.remove('hidden-report');
+
+  }
+
+
 
   function drag_start(event) {
     var style = window.getComputedStyle(event.target, null);
