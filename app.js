@@ -15,6 +15,8 @@ var zIndex = 1;
     var closeButtons = document.querySelectorAll('.close');
     var minimizeButtons = document.querySelectorAll('.minimize');
 
+
+
     closeReport.addEventListener('click', close_report, false);
     createReport.addEventListener('click', create_report, false);
     
@@ -68,7 +70,15 @@ var zIndex = 1;
     var j = document.getElementById(event.dataTransfer.getData("target"));
     j.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
     j.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
-    event.preventDefault();
+    const rect = document.querySelector('.STRUCTURE').getBoundingClientRect();
+    
+    // Drop the sticker in Cost Structure
+    if (event.clientX >= rect.left && event.clientX <= rect.right &&
+      event.clientY >= rect.top && event.clientY <= rect.bottom) {
+      console.log('we are in structure');
+      document.querySelector('.note').style.background = 'lightblue';
+    } else {document.querySelector('.note').style.background = 'yellow';}
+  
     
     return false;
   }
