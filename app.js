@@ -1,4 +1,5 @@
 var zIndex = 1;
+let dataList =[];
 
 (function(window, document) {
   window.addEventListener('load', loaded, false);
@@ -75,9 +76,9 @@ var zIndex = 1;
     // Drop the sticker in Cost Structure
     if (event.clientX >= rect.left && event.clientX <= rect.right &&
       event.clientY >= rect.top && event.clientY <= rect.bottom) {
-      console.log('we are in structure');
-      document.querySelector('.note').style.background = 'lightblue';
-    } else {document.querySelector('.note').style.background = 'yellow';}
+      j.style.background = 'lightblue';
+      console.log('text :', j.innerText);
+    } else {j.style.background = 'yellow';}
   
     
     return false;
@@ -119,7 +120,6 @@ var zIndex = 1;
     addButton.addEventListener('click', addnote, false);
 
     function addnote() {
-      console.log('click')
       Handlebars.registerHelper('breakLine', function(text) {
         return text.replace(/\n/, '<br/>');
       });
@@ -130,6 +130,9 @@ var zIndex = 1;
       var context = {
         text: text,
       };
+      dataList.push(text);
+      console.log('dataList :', dataList)
+      
 
       var note = document.createElement('div');
       note.classList.add('note');
