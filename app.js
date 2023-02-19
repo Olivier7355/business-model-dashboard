@@ -13,11 +13,12 @@ let dataList =[];
     var createButton = document.querySelector('.add-note');
     var createReport = document.querySelector('.report');
     var closeReport = document.querySelector('.close-modal');
+    var closeStructure = document.querySelector('.close-structure');
     var closeButtons = document.querySelectorAll('.close');
     var minimizeButtons = document.querySelectorAll('.minimize');
 
 
-
+    closeStructure.addEventListener('click', close_structure, false);
     closeReport.addEventListener('click', close_report, false);
     createReport.addEventListener('click', create_report, false);
     
@@ -48,6 +49,9 @@ let dataList =[];
     overlay.classList.add('hidden-report');
 
   }
+  function close_structure(event) {
+    document.querySelector('.modal-structure').classList.add('hidden-report');
+  }
 
 
 
@@ -69,6 +73,7 @@ let dataList =[];
   function drop(event) {
     var offset = event.dataTransfer.getData("text/plain").split(',');
     var j = document.getElementById(event.dataTransfer.getData("target"));
+    const modalStructure = document.querySelector('.modal-structure');
     j.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
     j.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
     const rect = document.querySelector('.STRUCTURE').getBoundingClientRect();
@@ -78,6 +83,7 @@ let dataList =[];
       event.clientY >= rect.top && event.clientY <= rect.bottom) {
       j.style.background = 'lightblue';
       console.log('text :', j.innerText);
+      modalStructure.classList.remove('hidden-structure');
     } else {j.style.background = 'yellow';}
   
     
