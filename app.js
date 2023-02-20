@@ -37,9 +37,9 @@ let dataList =[];
 
   function create_report(event) {
     const modal = document.querySelector('.modal');
-    const overlay = document.querySelector('.overlay');
+    // const overlay = document.querySelector('.overlay');
     modal.classList.remove('hidden-report');
-    overlay.classList.remove('hidden-report');
+    // overlay.classList.remove('hidden-report');
 
   }
   function close_report(event) {

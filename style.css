@@ -191,6 +191,8 @@ h1 {
   border-radius: 5px;
   display: none;
   background-color: #ff8;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ 
 
 }  
 .add-sticker textarea {
@@ -303,7 +305,8 @@ h1 {
   margin-top: 15%;
   border: 1px solid rgb(211, 248, 4);
   border-radius: 5px;
-  box-shadow: 0px 0px 5px 0px rgba(#033649,0.75);
+  /* box-shadow: 0px 0px 5px 0px rgba(#033649,0.75); */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   opacity: 1;
   left: 0;
   top: 6em;
@@ -342,3 +345,11 @@ span {
    word-wrap: break-word;  
 }
   
+select {
+  width: 22%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  font-size: 18px;
+}
