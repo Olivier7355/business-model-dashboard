@@ -84,6 +84,8 @@ let dataList =[];
       j.style.background = 'lightblue';
       console.log('text :', j.innerText);
       modalStructure.classList.remove('hidden-structure');
+      dataList[0].push('COST STRUCTURE');
+      console.log('dataList :', dataList)
     } else {j.style.background = 'yellow';}
   
     
@@ -137,6 +139,7 @@ let dataList =[];
         text: text,
       };
       dataList.push(text);
+      //dataList[0][1].push('null');
       console.log('dataList :', dataList)
       
 
