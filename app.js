@@ -82,9 +82,13 @@ let dataList =[];
     if (event.clientX >= rect.left && event.clientX <= rect.right &&
       event.clientY >= rect.top && event.clientY <= rect.bottom) {
       j.style.background = 'lightblue';
+      var block = j.innerText.slice(j.innerText.indexOf("#b")+2,j.innerText.length);
+      var theId = j.getAttribute('id');
+      console.log('id :', theId);
       console.log('text :', j.innerText);
+      console.log('block :', block);
       modalStructure.classList.remove('hidden-structure');
-      dataList[0].push('COST STRUCTURE');
+      dataList[theId-1][2] = 'COST STRUCTURE';
       console.log('dataList :', dataList)
     } else {j.style.background = 'yellow';}
   
@@ -135,12 +139,13 @@ let dataList =[];
       var source = document.getElementById('entry-template').innerHTML;
       var template = Handlebars.compile(source);
       var text = document.querySelector('textarea').value;
+      var block = '#bnull';
       var context = {
         text: text,
+        block: block,
       };
-      dataList.push(text);
-      //dataList[0][1].push('null');
-      console.log('dataList :', dataList)
+      dataList.push([zIndex,text,block]);
+      console.log('dataList :', dataList);
       
 
       var note = document.createElement('div');
