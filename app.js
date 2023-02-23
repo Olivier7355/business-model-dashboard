@@ -76,21 +76,79 @@ let dataList =[];
     const modalStructure = document.querySelector('.modal-structure');
     j.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
     j.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
-    const rect = document.querySelector('.STRUCTURE').getBoundingClientRect();
+    j.style.background = 'yellow';
+    //var block = j.innerText.slice(j.innerText.indexOf("#b")+2,j.innerText.length);
+    var theId = j.getAttribute('id');
     
-    // Drop the sticker in Cost Structure
+    // Drop the sticker in PARTNERS block
+    const rectPartners = document.querySelector('.PARTNERS').getBoundingClientRect();
+    if (event.clientX >= rectPartners.left && event.clientX <= rectPartners.right &&
+      event.clientY >= rectPartners.top && event.clientY <= rectPartners.bottom) {
+        dataList[theId-1][2] = 'KEY PARTNERS';
+        console.log('dataList :', dataList)
+      }
+    // Drop the sticker in ACTIVITIES block
+    const rectActivities = document.querySelector('.ACTIVITIES').getBoundingClientRect();
+    if (event.clientX >= rectActivities.left && event.clientX <= rectActivities.right &&
+      event.clientY >= rectActivities.top && event.clientY <= rectActivities.bottom) {
+        dataList[theId-1][2] = 'KEY ACTIVITIES';
+        console.log('dataList :', dataList)
+      }
+    // Drop the sticker in RESOURCES block
+    const rectResources = document.querySelector('.RESOURCES').getBoundingClientRect();
+    if (event.clientX >= rectResources.left && event.clientX <= rectResources.right &&
+      event.clientY >= rectResources.top && event.clientY <= rectResources.bottom) {
+        dataList[theId-1][2] = 'KEY RESOURCES';
+        console.log('dataList :', dataList)
+      }
+    // Drop the sticker in PROPOSITION block
+    const rectProposition = document.querySelector('.PROPOSITION').getBoundingClientRect();
+    if (event.clientX >= rectProposition.left && event.clientX <= rectProposition.right &&
+      event.clientY >= rectProposition.top && event.clientY <= rectProposition.bottom) {
+        dataList[theId-1][2] = 'VALUE PROPOSITION';
+        console.log('dataList :', dataList)
+      }
+    // Drop the sticker in RELATIONSHIPS block
+    const rectRelationship = document.querySelector('.RELATIONSHIPS').getBoundingClientRect();
+    if (event.clientX >= rectRelationship.left && event.clientX <= rectRelationship.right &&
+      event.clientY >= rectRelationship.top && event.clientY <= rectRelationship.bottom) {
+        dataList[theId-1][2] = 'CUSTOMER RELATIONSHIPS';
+        console.log('dataList :', dataList)
+      }
+    // Drop the sticker in CHANNELS block
+    const rectChannels = document.querySelector('.CHANNELS').getBoundingClientRect();
+    if (event.clientX >= rectChannels.left && event.clientX <= rectChannels.right &&
+      event.clientY >= rectChannels.top && event.clientY <= rectChannels.bottom) {
+        dataList[theId-1][2] = 'CHANNELS';
+        console.log('dataList :', dataList)
+      }
+    // Drop the sticker in SEGMENTS block
+    const rectSegments = document.querySelector('.SEGMENTS').getBoundingClientRect();
+    if (event.clientX >= rectSegments.left && event.clientX <= rectSegments.right &&
+      event.clientY >= rectSegments.top && event.clientY <= rectSegments.bottom) {
+        dataList[theId-1][2] = 'CUSTOMER SEGMENTS';
+        console.log('dataList :', dataList)
+      }
+    // Drop the sticker in REVENUE block
+    const rectRevenue = document.querySelector('.REVENUE').getBoundingClientRect();
+    if (event.clientX >= rectRevenue.left && event.clientX <= rectRevenue.right &&
+      event.clientY >= rectRevenue.top && event.clientY <= rectRevenue.bottom) {
+        dataList[theId-1][2] = 'REVENUE STREAMS';
+        console.log('dataList :', dataList)
+      }
+
+    // Drop the sticker in STRUCTURE block
+    const rect = document.querySelector('.STRUCTURE').getBoundingClientRect();
     if (event.clientX >= rect.left && event.clientX <= rect.right &&
       event.clientY >= rect.top && event.clientY <= rect.bottom) {
       j.style.background = 'lightblue';
-      var block = j.innerText.slice(j.innerText.indexOf("#b")+2,j.innerText.length);
-      var theId = j.getAttribute('id');
       console.log('id :', theId);
       console.log('text :', j.innerText);
       console.log('block :', block);
       modalStructure.classList.remove('hidden-structure');
       dataList[theId-1][2] = 'COST STRUCTURE';
       console.log('dataList :', dataList)
-    } else {j.style.background = 'yellow';}
+    }
   
     
     return false;
@@ -99,8 +157,12 @@ let dataList =[];
   function close(event) {
     event.stopPropagation();
     var note = this.parentNode.parentNode;
+    var theId = note.getAttribute('id');
+    dataList[theId-1][2] = 'DELETED';
+    console.log('dataList :', dataList);
     note.classList.toggle('closed');
     var wrapper = document.querySelector('.wrapper');
+    
     setTimeout(function() {
       wrapper.removeChild(note);
       note = null;
@@ -139,12 +201,12 @@ let dataList =[];
       var source = document.getElementById('entry-template').innerHTML;
       var template = Handlebars.compile(source);
       var text = document.querySelector('textarea').value;
-      var block = '#bnull';
+      //var block = '#bnull';
       var context = {
         text: text,
-        block: block,
+        //block: block,
       };
-      dataList.push([zIndex,text,block]);
+      dataList.push([zIndex,text,null]);
       console.log('dataList :', dataList);
       
 
