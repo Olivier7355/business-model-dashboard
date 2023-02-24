@@ -142,11 +142,20 @@ let dataList =[];
     if (event.clientX >= rect.left && event.clientX <= rect.right &&
       event.clientY >= rect.top && event.clientY <= rect.bottom) {
       j.style.background = 'lightblue';
-      console.log('id :', theId);
-      console.log('text :', j.innerText);
-      console.log('block :', block);
-      modalStructure.classList.remove('hidden-structure');
       dataList[theId-1][2] = 'COST STRUCTURE';
+      //console.log('id :', theId);
+      //console.log('text :', j.innerText);
+      // sort list : https://riptutorial.com/javascript/example/3443/sorting-multidimensional-array
+      
+      for (var n=0; n<dataList.length; n++) {
+        var cardType = document.getElementById('card_type');
+        var option = document.createElement('option');
+        cardType.appendChild(option).setAttribute('value', dataList[n][0]); // The value is the sticker number
+        cardType.appendChild(option).innerHTML = dataList[n][2]+' : '+dataList[n][1];
+      }
+
+      modalStructure.classList.remove('hidden-structure');
+      
       console.log('dataList :', dataList)
     }
   
