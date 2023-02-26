@@ -149,28 +149,14 @@ let dataList =[];
       // start browser hot load : vite dev --host
 
       // sort by block type
-
-      /*const dataList = [
-                [ 1, "ghggh", "KEY ACTIVITIES" ],
-                [ 5, "hghghg", "VALUE PROPOSITION" ],
-                [ 3, "ghghgh", "KEY ACTIVITIES" ],
-                [ 2, "ghghgh", "VALUE PROPOSITION" ],
-                [ 5, "fgfgfg", "COST STRUCTURE" ]
-                ] ;
-
-      console.log(dataList);
-
-      // sort by block type
       let tempDataList = dataList.slice();  
-      tempDataList.sort(function(a, b) { return a[0] - b[0];})
+      tempDataList.sort(function(a, b) { if (a[2] === b[2]) {
+              return 0;
+          }
+          else {
+              return (a[1] < b[1]) ? -1 : 1;
+          }})
       console.log('sorted list :', tempDataList);
-      */
-
-      let tempDataList = dataList.slice();  
-      tempDataList.sort(function(a, b) {
-        return a[2] - b[2];
-      })
-      console.log('sorted list :', tempDataList)
 
       for (var n=0; n<tempDataList.length; n++) {
         var cardType = document.getElementById('card_type');
