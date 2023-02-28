@@ -225,6 +225,10 @@ h1 {
 .hidden-structure {
   display: none;
 }
+.hidden-segments {
+  display: none;
+}
+
 
 .modal {
   position: absolute;
@@ -252,6 +256,19 @@ h1 {
   box-shadow: 0 3rem 5rem rgba(0,0,0,0.3);
   z-index: 10;
 }
+.modal-segments {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25%;
+  background-color: white;
+  padding: 2rem;
+  padding-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0,0,0,0.3);
+  z-index: 10;
+}
 .close-modal {
   text-align: right;
   font-size: 1.7em;
@@ -260,6 +277,7 @@ h1 {
   text-align: right;
   font-size: 1.7em;
 }
+
 .overlay {
   position: absolute;
   top: 0;
@@ -365,12 +383,29 @@ input[type=button] {
   border-radius: 5px;
 }
 input[type=text] {
-  width : 10%;
+  width : 30%;
   background-color: #f1f1f1;
   border: none;
   color: black;
   padding: 16px 10px;
   text-decoration: none;
+  text-align: right;
   margin: 2px 2px;
   font-size: 16px;
 }
+.clear {
+  color : black;
+  background-color: #f1f1f1;
+  padding : 5px;
+  border: 2px solid white;
+  border-radius: 5px;
+  text-align: center;
+  margin-right: 10px;
+  font-size: 11px;
+  font-weight: bold;
+
+}
+.clear:hover {
+  background-color: darkgrey;
+  border-color: darkgrey;
+  }

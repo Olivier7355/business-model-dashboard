@@ -74,6 +74,7 @@ let dataList =[];
     var offset = event.dataTransfer.getData("text/plain").split(',');
     var j = document.getElementById(event.dataTransfer.getData("target"));
     const modalStructure = document.querySelector('.modal-structure');
+    const modalSegments = document.querySelector('.modal-segments');
     j.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
     j.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
     j.style.background = 'yellow';
@@ -127,6 +128,7 @@ let dataList =[];
     if (event.clientX >= rectSegments.left && event.clientX <= rectSegments.right &&
       event.clientY >= rectSegments.top && event.clientY <= rectSegments.bottom) {
         dataList[theId-1][2] = 'CUSTOMER SEGMENTS';
+        modalSegments.classList.remove('hidden-segments');
         console.log('dataList :', dataList)
       }
     // Drop the sticker in REVENUE block

@@ -14,6 +14,9 @@
 
   <!-- Menu-->
   <div class="container">
+    <div class="clear">
+      CLEAR CANVA
+    </div>
     <div class="report">
       <i class="fa fa-calculator fa-fw"></i>
     </div>
@@ -33,7 +36,7 @@
   <!-- Financial Projection Window -->
   <div class="modal hidden-report">
     <div  class="close-modal">
-      <button style="width: 35px; height: 35px; font-size: 25px;">X</button>
+      <button style="margin-right:-20px; width: 35px; height: 35px; font-size: 25px;">X</button>
     </div>
 
     <H1>Financial Projection</H1>
@@ -57,7 +60,7 @@
   <!-- Cost Structure Window -->
   <div class="modal-structure hidden-structure">
     <div  class="close-structure">
-      <button style="width: 35px; height: 35px; font-size: 25px;">X</button>
+      <button style="margin-right:-20px; width: 35px; height: 35px; font-size: 25px;">X</button>
     </div>
 
     <H1>Cost Structure</H1>
@@ -80,6 +83,18 @@
         <option value="other_cost">CUSTOMER SEGMENTS</option> -->
       </select>
       <input type="text" id="amount" name="amount">
+      <input type="button" value="Validate" onclick="getValue()">
+    </form>
+
+  </div>
+
+  <!-- Customer Segments Window -->
+  <div class="modal-segments hidden-segments">
+    <p>
+      xcvxcvxcvxcvxcvxcvxcvxcvxcv<br>
+    </p>
+    <form>
+      <input type="text" value="0" id="amount" name="amount">
       <input type="button" value="Validate" onclick="getValue()">
     </form>
 
