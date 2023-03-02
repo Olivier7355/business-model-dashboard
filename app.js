@@ -12,6 +12,7 @@ function getAmountValue(event) {
   source.appendChild(option).innerHTML = qw;
   //source.appendChild(option).style.background = 'white';
   source.appendChild(option).style.textAlign = 'right';
+  source.appendChild(option).setAttribute('id', theId+'-'+qw);
   const modalSegments = document.querySelector('.modal-segments');
   modalSegments.classList.add('hidden-segments');
   
