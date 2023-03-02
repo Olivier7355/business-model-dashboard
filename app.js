@@ -1,5 +1,23 @@
 var zIndex = 1;
 let dataList =[];
+let theId =0;
+
+function getAmountValue(event) {  
+  const qw = document.getElementById("amount-structure").value;
+  console.log(qw,theId);
+  const source = document.getElementById(theId);
+  //console.log(source);
+  //source.style.background ='blue';
+  var option = document.createElement('h2');
+  source.appendChild(option).innerHTML = qw;
+  //source.appendChild(option).style.background = 'white';
+  source.appendChild(option).style.textAlign = 'right';
+  const modalSegments = document.querySelector('.modal-segments');
+  modalSegments.classList.add('hidden-segments');
+  
+  
+
+}
 
 (function(window, document) {
   window.addEventListener('load', loaded, false);
@@ -79,7 +97,7 @@ let dataList =[];
     j.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
     j.style.background = 'yellow';
     //var block = j.innerText.slice(j.innerText.indexOf("#b")+2,j.innerText.length);
-    var theId = j.getAttribute('id');
+    theId = j.getAttribute('id');
     
     // Drop the sticker in PARTNERS block
     const rectPartners = document.querySelector('.PARTNERS').getBoundingClientRect();
@@ -175,6 +193,7 @@ let dataList =[];
     
     return false;
   }
+
 
   function close(event) {
     event.stopPropagation();
