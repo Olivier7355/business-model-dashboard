@@ -63,12 +63,18 @@
       <button style="margin-right:-20px; width: 35px; height: 35px; font-size: 25px;">X</button>
     </div>
 
-    <H1>Cost Structure</H1>
+    <H1>Cost Estimator</H1>
     <p>
-      xcvxcvxcvxcvxcvxcvxcvxcvxcvxcvxcv<br>
+      Select the cost type<br>
     </p>
-    <form>
-      <select id="cost_type" name="cost_type">
+    
+      <input type="button" value="Fixed Costs" onclick="fixedCosts()">
+      <input type="button" value="Variable Costs" onclick="getValue()">
+      <input type="button" value="Other Costs" onclick="otherCosts()">
+      <div id="cost-type">
+      </div>
+
+<!--       <select id="cost_type" name="cost_type">
       <option value="fixed_cost">Fixed Cost</option>
       <option value="variable_cost">Variable Cost</option>
       <option value="other_cost">Other Cost</option>
@@ -76,8 +82,8 @@
       <select id="card_type" name="card_type">
       </select>
       <input type="text" id="amount" name="amount">
-      <input type="button" value="Validate" onclick="getValue()">
-    </form>
+      <input type="button" value="Validate" onclick="getValue()"> -->
+    
 
   </div>
 

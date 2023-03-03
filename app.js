@@ -1,5 +1,6 @@
 var zIndex = 1;
 let dataList =[];
+let dataDictSegments ={};
 let theId =0;
 
 function getAmountValue(event) {  
@@ -13,12 +14,45 @@ function getAmountValue(event) {
   //source.appendChild(option).style.background = 'white';
   source.appendChild(option).style.textAlign = 'right';
   source.appendChild(option).setAttribute('id', theId+'-'+qw);
+  dataDictSegments[theId] = qw;
+  console.log(dataDictSegments)
   const modalSegments = document.querySelector('.modal-segments');
   modalSegments.classList.add('hidden-segments');
-  
-  
 
 }
+
+function otherCosts() {
+  const costType = document.getElementById('cost-type');
+  const option = document.createElement('option');
+  //costType.appendChild(option).setAttribute('value', tempDataList[n][0]); // The value is the sticker number
+  costType.innerHTML = '<div id="cost-estimator"><input type="text" value="0"  name="amount"><input  type="button" value="Validate" onclick="getAmountValue(event);"></input></div>';
+
+}
+
+function fixedCosts() {
+  const list = document.getElementById("cost-estimator");
+  list.remove();
+
+
+  // sort by block type
+  let tempDataList = dataList.slice();  
+  tempDataList.sort(function(a, b) { if (a[2] === b[2]) {
+          return 0;
+      }
+      else {
+          return (a[1] < b[1]) ? -1 : 1;
+      }})
+  console.log('sorted list :', tempDataList);
+
+  for (var n=0; n<tempDataList.length; n++) {
+    const costType = document.getElementById('cost-type');
+    var option = document.createElement('option');
+    costType.appendChild(option).setAttribute('value', tempDataList[n][0]); // The value is the sticker number
+    costType.appendChild(option).innerHTML = tempDataList[n][2]+' : '+tempDataList[n][1];
+  }
+
+}
+
 
 (function(window, document) {
   window.addEventListener('load', loaded, false);
@@ -170,7 +204,7 @@ function getAmountValue(event) {
       // start browser hot load : vite dev --host
 
       // sort by block type
-      let tempDataList = dataList.slice();  
+      /* let tempDataList = dataList.slice();  
       tempDataList.sort(function(a, b) { if (a[2] === b[2]) {
               return 0;
           }
@@ -185,7 +219,7 @@ function getAmountValue(event) {
         cardType.appendChild(option).setAttribute('value', tempDataList[n][0]); // The value is the sticker number
         cardType.appendChild(option).innerHTML = tempDataList[n][2]+' : '+tempDataList[n][1];
       }
-
+ */
       modalStructure.classList.remove('hidden-structure');
       
       console.log('dataList :', dataList)

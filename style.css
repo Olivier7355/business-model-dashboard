@@ -382,6 +382,10 @@ input[type=button] {
   font-size: 16px;
   border-radius: 5px;
 }
+input[type=button]:hover {
+  background-color: #02633f;
+}
+
 input[type=text] {
   width : 30%;
   background-color: #f1f1f1;
@@ -394,8 +398,8 @@ input[type=text] {
   font-size: 16px;
 }
 .clear {
-  color : black;
-  background-color: #f1f1f1;
+  color : white;
+  background-color: black;
   padding : 5px;
   border: 2px solid white;
   border-radius: 5px;
@@ -406,6 +410,6 @@ input[type=text] {
 
 }
 .clear:hover {
-  background-color: darkgrey;
+  color: darkgrey;
   border-color: darkgrey;
   }
