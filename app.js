@@ -44,11 +44,24 @@ function fixedCosts() {
       }})
   console.log('sorted list :', tempDataList);
 
+  let blockTitle = '';
   for (var n=0; n<tempDataList.length; n++) {
-    const costType = document.getElementById('cost-type');
-    var option = document.createElement('option');
-    costType.appendChild(option).setAttribute('value', tempDataList[n][0]); // The value is the sticker number
-    costType.appendChild(option).innerHTML = tempDataList[n][2]+' : '+tempDataList[n][1];
+    if (tempDataList[n][2] != 'COST STRUCTURE') {
+      const costType = document.getElementById('cost-type');
+      var option = document.createElement('p');
+      costType.appendChild(option).setAttribute('value', tempDataList[n][0]); // The value is the sticker number
+      
+      if (tempDataList[n][2] != blockTitle) {
+        costType.appendChild(option).innerHTML = '<br>'+tempDataList[n][2]+'<br><br>'+tempDataList[n][1];
+        blockTitle = tempDataList[n][2];
+      } else {
+        costType.appendChild(option).innerHTML = tempDataList[n][1];
+    
+      }
+    
+    
+    
+    }
   }
 
 }

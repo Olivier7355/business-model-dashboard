@@ -232,11 +232,12 @@ h1 {
 
 .modal {
   position: absolute;
+  color: #e7e5e5;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;
-  background-color: white;
+  background-color: rgb(65, 63, 63);
   padding: 2rem;
   padding-top: 10px;
   border-radius: 5px;
@@ -245,11 +246,12 @@ h1 {
 }
 .modal-structure {
   position: absolute;
+  color: #e7e5e5;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
-  background-color: white;
+  background-color: rgb(65, 63, 63);
   padding: 2rem;
   padding-top: 10px;
   border-radius: 5px;
@@ -258,11 +260,12 @@ h1 {
 }
 .modal-segments {
   position: absolute;
+  color: #e7e5e5;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 25%;
-  background-color: white;
+  background-color: rgb(65, 63, 63);
   padding: 2rem;
   padding-top: 10px;
   border-radius: 5px;
